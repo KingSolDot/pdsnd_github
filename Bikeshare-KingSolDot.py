@@ -220,7 +220,7 @@ def display_data(df):
             print(df.iloc[start_loc:end_loc])
             #TO DO: To continue displaying the df as requested by user in 5s
             while True:
-                view_display = input('\nDo you wish to continue viewing the rows? Enter yes or no\n')
+                view_display = input('\nDo you wish to view more rows? Enter yes or no\n')
                 if view_display.lower() not in ['yes', 'no']:
                     print('Please try again - Enter yes or no\n')
                 elif view_display.lower() == "yes":
