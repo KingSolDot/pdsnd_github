@@ -10,7 +10,6 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
-
     Returns:
         (str) city - name of the city to analyze
         (str) month - name of the month to filter by, or "all" to apply no month filter
@@ -48,14 +47,13 @@ def get_filters():
         else:
             break
 
-    print('-'*40)
+    print('-'*20)
     return city, month, day
 
 
 def load_data(city, month, day):
     """
     Loads data for the specified city and filters by month and day if applicable.
-
     Args:
         (str) city - name of the city to analyze
         (str) month - name of the month to filter by, or "all" to apply no month filter
@@ -114,7 +112,7 @@ def time_stats(df):
     print('The Most Common Start Hour is', popular_hour)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*20)
 
 
 def station_stats(df):
@@ -141,7 +139,7 @@ def station_stats(df):
     print('\nThe most frequently used combination of start station and end station trip are', Start_Station, " & ", End_Station, 'respectively')
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*20)
 
 
 def trip_duration_stats(df):
@@ -162,7 +160,7 @@ def trip_duration_stats(df):
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*20)
 
 
 def user_stats(df):
@@ -205,7 +203,7 @@ def user_stats(df):
       print("\nMost Common Year:\nNo data available for this month.")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print('-'*20)
 
 
 def display_data(df):
@@ -222,7 +220,7 @@ def display_data(df):
             print(df.iloc[start_loc:end_loc])
             #TO DO: To continue displaying the df as requested by user in 5s
             while True:
-                view_display = input('\nDo you wish to continue viewing the rows? Enter yes or no\n')
+                view_display = input('\nDo you wish to view more rows? Enter yes or no\n')
                 if view_display.lower() not in ['yes', 'no']:
                     print('Please try again - Enter yes or no\n')
                 elif view_display.lower() == "yes":
